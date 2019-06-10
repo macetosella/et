@@ -46,14 +46,14 @@ public class PedidosServiceImpl implements PedidosService{
     }
 
     @Override
-    public Pedido findById(Integer id) throws IllegalArgumentException {
+    public Pedido findById(final Integer id) throws IllegalArgumentException {
         if(id == null) throw new IllegalArgumentException("Id para buscar pedido invalido");
 
         return this.proxyDAO.select(id);
     }
 
     @Override
-    public void delete(Integer id) throws IllegalArgumentException {
+    public void delete(final Integer id) throws IllegalArgumentException {
         if(id == null) throw new IllegalArgumentException("Id para eliminar pedido invalido");
 
         this.proxyDAO.delete(id);
