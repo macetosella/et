@@ -28,6 +28,12 @@ Lo anterior mencionado fue para cumplir con la consigna en el diseño del servic
 En todas las capas se utilizó el estandar JSR330 con javax.inject. Solo a modo de proponer el diseño.
 
 ## 2
+Teniendo en cuenta que la tabla Pedido tenga muchos registros y columnas habría que:
+- Definir correctamente los tipos de datos según la necesidad concreta. Por ejemplo los numéricos tener en cuenta en qué rangos pueden manejarse para utilizar menos bits por valor si no es necesario.
+- Generar índices para los campos involucrados en consultas, aunque es bueno considerar dejar de lado los campos que tienen un alto número de nulls ya que puede incrementar el espacio del índice en algunos motores.
+- Utilizar pooles de conexión
+- Intentar utilizar DTOs para los servicios involucrados, retornando los campos necesarios para evitar responses con mucha información y que la red no se sobrecargue.
+- Generar tablas con datos sumarizados o un cubo y modificar la responsabilidad de aplicaciones que interactuan con los pedidos. Para lo que es aplicaciones de consultas gerenciales utilizar posiblemente un Data Warehouse.
 
 ## 3
 ### Ejecución
