@@ -19,7 +19,7 @@ public class PedidoController {
         //dummy return para tener una devolucion en el html
         Random random = new Random();
         if(random.nextBoolean())
-            return HttpResponse.accepted();
+            return HttpResponse.created(pedido);
         else {
             HttpResponse response = HttpResponse.badRequest().header("X-Error","random false!");
             return response;

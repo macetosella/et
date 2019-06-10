@@ -23,3 +23,4 @@ gradle-app.setting
 .idea/workspace.xml
 .idea/usage.statistics.xml
 .idea/task.xml
+.idea/vcs.xml
