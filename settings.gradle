@@ -1,0 +1,3 @@
+rootProject.name = 'evaluacion-tecnica'
+include 'front'
+

@@ -1,0 +1,10 @@
+micronaut:
+  server:
+    port: 8089
+    cors:
+      enabled: true
+      configurations:
+         web:
+             exposedHeaders:
+                - Content-Type
+                - X-ERROR

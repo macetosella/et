@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+    <title>Pedido Form - ET</title>
+    <meta name="robots" content="NoIndex, NoFollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+        <div class="container">
+            <h1>Formulario de Pedido</h1>
+            <form>
+                <div id="error-global" class="alert alert-danger" role="alert" style="display:none;">
+                    Error al guardar el pedido.
+                </div>
+                <div id="exito-global" class="alert alert-success" role="alert" style="display:none;">
+                    Se ha guardado el pedido.
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" name="nombre" class="form-control" max="100" aria-describedby="nombreHelp" placeholder="Ingrese nombre..." >
+                    <small id="nombreHelp" class="form-text text-muted">Requerido su ingreso y solo puede tener 100 caracteres.</small>
+                    <div id="nombre-requerido" class="alert alert-danger" role="alert" style="display:none;">
+                        Debe ingresar el nombre del pedido por favor.
+                    </div>
+                    <div id="nombre-largo" class="alert alert-danger" role="alert" style="display:none;">
+                        El nombre del pedido no puede tener m&aacute;s de 100 caracteres.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="monto">Monto:</label>
+                    <input type="number" id="monto" name="monto" class="form-control" aria-describedby="montoHelp" placeholder="" >
+                    <small id="montoHelp" class="form-text text-muted">Requerido su ingreso, n&uacute;mero entero.</small>
+                    <div id="monto-requerido" class="alert alert-danger" role="alert" style="display:none;">
+                        Debe ingresar monto del pedido por favor.
+                    </div>
+                    <div id="monto-entero" class="alert alert-danger" role="alert" style="display:none;">
+                        El monto del pedido debe ser un n&uacute;mero entero.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descuento">Descuento:</label>
+                    <input type="number" id="descuento" name="descuento" class="form-control" aria-describedby="montoHelp" placeholder="" >
+                    <small id="descuentoHelp" class="form-text text-muted">Requerido su ingreso, n&uacute;mero entero.</small>
+                    <div id="descuento-entero" class="alert alert-danger" role="alert" style="display:none;">
+                        El descuento del pedido debe ser un n&uacute;mero entero.
+                    </div>
+                </div>
+                <button id="guardar" type="button" class="btn btn-primary">Guardar</button>
+                <button id="limpiar" type="button" class="btn btn-secondary">Limpiar</button>
+            </form>
+        </div>
+        <!-- de bootstrap template -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./js/pedidoForm.js" type="text/javascript"></script>
+    </body>
+</html>
