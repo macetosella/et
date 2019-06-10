@@ -31,8 +31,8 @@ En todas las capas se utilizó el estandar JSR330 con javax.inject. Solo a modo 
 
 ## 3
 ### Ejecución
-Desde el root del proyecto ejecutar: 
-`./gradlew run`
+Desde el root del proyecto ejecutar: <br>
+`./gradlew run` <br>
 Luego abrir ./front/index.html.
 
 Para la implementación de este enunciado se realizó otro módulo en el proyecto llamado front. Allí está el html index.html para el formulario del pedido y un js, pedidoForm.js que tiene la lógica de validaciones, muestra de mensajes e interacción mediante AJAX con el backend. Se optó por bootstrap, jquery (slim version) y vanilla Javascript.
