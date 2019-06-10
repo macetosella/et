@@ -31,8 +31,9 @@ En todas las capas se utilizó el estandar JSR330 con javax.inject. Solo a modo 
 
 ## 3
 ### Ejecución
-Ejecutar: 
-./gradlew run
+Desde el root del proyecto ejecutar: 
+`./gradlew run`
+Luego abrir ./front/index.html.
 
 Para la implementación de este enunciado se realizó otro módulo en el proyecto llamado front. Allí está el html index.html para el formulario del pedido y un js, pedidoForm.js que tiene la lógica de validaciones, muestra de mensajes e interacción mediante AJAX con el backend. Se optó por bootstrap, jquery (slim version) y vanilla Javascript.
 El backend es el proyecto del enunciado 1 al que se le agregó un controller utilizando el framework micronaut. El controller es casi dummy, tiene un random para poder tener casos de éxito y de fallos y poder ver cómo reacciona el form ante dichos casos. Aproveché este ejercicio técnico para probar muy rudimentariamente el framework.
