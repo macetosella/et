@@ -2,10 +2,10 @@
 
 ## Consideraciones generales
 
-Se utilizó java 8 y las posibilidades de código a partir de dicha versión.
-Gradle para build y run con dependencias de maven.
-El IDE utilizado es Intellij IDEA versión para la comunidad.
-Se utilizó lombok y micronaut por lo que hay que configurar el IDE para que tenga AnnotationProcessor activo. A su vez para la compilación es requerido lombok [plugin activo](https://projectlombok.org/setup/intellij). 
+ - Se utilizó java 8 y las posibilidades de código a partir de dicha versión.
+ - Gradle para build y run con dependencias de maven.
+ - El IDE utilizado es Intellij IDEA versión para la comunidad.
+ - Se utilizó lombok y micronaut por lo que hay que configurar el IDE para que tenga AnnotationProcessor activo. A su vez para la compilación es requerido lombok [plugin activo](https://projectlombok.org/setup/intellij).
 
 ## 1
 
@@ -30,10 +30,15 @@ En todas las capas se utilizó el estandar JSR330 con javax.inject. Solo a modo 
 ## 2
 Teniendo en cuenta que la tabla Pedido tenga muchos registros y columnas habría que:
 - Definir correctamente los tipos de datos según la necesidad concreta. Por ejemplo los numéricos tener en cuenta en qué rangos pueden manejarse para utilizar menos bits por valor si no es necesario.
-- Generar índices para los campos involucrados en consultas, aunque es bueno considerar dejar de lado los campos que tienen un alto número de nulls ya que puede incrementar el espacio del índice en algunos motores.
-- Utilizar pooles de conexión
+- Generar índices para los campos involucrados en consultas dentro de where, aunque es bueno considerar dejar de lado los campos que tienen un alto número de nulls ya que puede incrementar el espacio del índice en algunos motores.
+- Utilizar pooles de conexión a nivel aplicación
+- Retornar en las consultas, en select los campos que se necesitan realmente para disminuir accesos I/O.
 - Intentar utilizar DTOs para los servicios involucrados, retornando los campos necesarios para evitar responses con mucha información y que la red no se sobrecargue.
 - Generar tablas con datos sumarizados o un cubo y modificar la responsabilidad de aplicaciones que interactuan con los pedidos. Para lo que es aplicaciones de consultas gerenciales utilizar posiblemente un Data Warehouse.
+- En caso de alto tráfico si se necesita utilizar muchas conexiones al motor se puede considerar en hacer réplicas de la base de datos y tener un balanceador de carga. (Implica complejidad de gestión de los datos como contra)
+- Para los BLOB
+
+*Nota:* Estoy acostumbrado a trabajar con MySQL.
 
 ## 3
 ### Ejecución
