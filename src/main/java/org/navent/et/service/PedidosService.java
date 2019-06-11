@@ -2,6 +2,7 @@ package org.navent.et.service;
 
 import org.navent.et.domain.Pedido;
 import org.navent.et.service.exceptions.InmutabilidadNoPracticableException;
+import org.navent.et.service.exceptions.ServiceException;
 
 public interface PedidosService {
 
@@ -12,7 +13,7 @@ public interface PedidosService {
      * @throws IllegalArgumentException cuando el pedido tiene asignado un id.
      * @throws  InmutabilidadNoPracticableException si el objeto pedido no permite clonarse.
      */
-    public Pedido create(final Pedido pedido) throws IllegalArgumentException, InmutabilidadNoPracticableException;
+    public Pedido create(final Pedido pedido) throws IllegalArgumentException, InmutabilidadNoPracticableException, ServiceException;
     /**
      * Modifica un pedido.<br>
      * @param pedido contiene los datos del pedido a modificar.
@@ -20,7 +21,7 @@ public interface PedidosService {
      * @throws IllegalArgumentException cuando el pedido tiene asignado un id que no existe en el repositorio.
      * @throws  InmutabilidadNoPracticableException si el objeto pedido no permite clonarse.
      */
-    public Pedido update(final Pedido pedido) throws IllegalArgumentException, InmutabilidadNoPracticableException;
+    public Pedido update(final Pedido pedido) throws IllegalArgumentException, InmutabilidadNoPracticableException, ServiceException;
 
     /**
      * Busca un pedido por id.
@@ -28,12 +29,12 @@ public interface PedidosService {
      * @return el pedido encontrado
      * @throws IllegalArgumentException en caso de que el id no sea valido.
      */
-    public Pedido findById(final Integer id) throws IllegalArgumentException;
+    public Pedido findById(final Integer id) throws IllegalArgumentException, ServiceException;
 
     /**
      * borra un pedido asignado al id
      * @param id
      *
      */
-    public void delete(final Integer id) throws IllegalArgumentException;
+    public void delete(final Integer id) throws IllegalArgumentException, ServiceException;
 }
